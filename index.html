@@ -8,285 +8,134 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy: #1B2A41;
-    --navy-deep: #14202F;
-    --navy-soft: #2A3D57;
-    --beige: #F4EEE1;
-    --beige-card: #EDE4D0;
-    --gold: #A9814C;
-    --gold-soft: #C9A96E;
-    --ink: #26374F;
-    --ink-dim: #6B7A8F;
-    --cream: #F4EEE1;
-    --serif: 'Lora', Georgia, serif;
-    --sans: 'Inter', sans-serif;
+    --navy:#1B2A41; --navy-deep:#14202F; --navy-soft:#2A3D57;
+    --beige:#F4EEE1; --beige-card:#EDE4D0;
+    --gold:#A9814C; --gold-soft:#C9A96E;
+    --ink:#26374F; --ink-dim:#6B7A8F; --cream:#F4EEE1;
+    --serif:'Lora',Georgia,serif; --sans:'Inter',sans-serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  body{
-    font-family:var(--sans);
-    background:var(--beige);
-    color:var(--ink);
-    line-height:1.6;
-  }
+  body{font-family:var(--sans); background:var(--beige); color:var(--ink); line-height:1.6;}
   a{color:inherit; text-decoration:none;}
   ::selection{background:var(--gold-soft); color:var(--navy-deep);}
 
-  .layout{
-    display:grid;
-    grid-template-columns:300px 1fr;
-    min-height:100vh;
-  }
+  .layout{display:grid; grid-template-columns:300px 1fr; min-height:100vh;}
 
   /* SIDEBAR */
-  .sidebar{
-    background:var(--navy);
-    color:var(--cream);
-    position:sticky;
-    top:0;
-    height:100vh;
-    padding:44px 34px;
-    display:flex;
-    flex-direction:column;
-  }
-  .sidebar .initials{
-    width:56px; height:56px;
-    border:1px solid var(--gold-soft);
-    display:flex; align-items:center; justify-content:center;
-    font-family:var(--serif);
-    font-size:20px;
-    letter-spacing:0.02em;
-    color:var(--gold-soft);
-    margin-bottom:22px;
-  }
-  .sidebar h1{
-    font-family:var(--serif);
-    font-size:26px;
-    font-weight:600;
-    line-height:1.25;
-    letter-spacing:0.01em;
-  }
-  .sidebar .role{
-    margin-top:8px;
-    font-size:12.5px;
-    letter-spacing:0.09em;
-    text-transform:uppercase;
-    color:var(--gold-soft);
-  }
-  .sidebar .rule{
-    width:36px; height:2px; background:var(--gold);
-    margin:24px 0;
-  }
-  .sidebar p.summary{
-    font-size:13.5px;
-    color:#C7CFDA;
-    line-height:1.7;
-  }
-
-  .sidebar nav{
-    margin-top:36px;
-    display:flex; flex-direction:column; gap:2px;
-  }
-  .sidebar nav a{
-    font-size:13px;
-    padding:9px 0;
-    color:#B9C4D3;
-    border-bottom:1px solid var(--navy-soft);
-    transition:color .15s, padding-left .15s;
-    letter-spacing:0.02em;
-  }
+  .sidebar{background:var(--navy); color:var(--cream); position:sticky; top:0; height:100vh; padding:44px 34px; display:flex; flex-direction:column;}
+  .sidebar .initials{width:56px; height:56px; border:1px solid var(--gold-soft); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:20px; color:var(--gold-soft); margin-bottom:22px;}
+  .sidebar h1{font-family:var(--serif); font-size:26px; font-weight:600; line-height:1.25;}
+  .sidebar .role{margin-top:8px; font-size:12.5px; letter-spacing:0.09em; text-transform:uppercase; color:var(--gold-soft);}
+  .sidebar .rule{width:36px; height:2px; background:var(--gold); margin:24px 0;}
+  .sidebar p.summary{font-size:13.5px; color:#C7CFDA; line-height:1.7;}
+  .sidebar nav{margin-top:36px; display:flex; flex-direction:column; gap:2px;}
+  .sidebar nav a{font-size:13px; padding:9px 0; color:#B9C4D3; border-bottom:1px solid var(--navy-soft); transition:color .15s, padding-left .15s; letter-spacing:0.02em;}
   .sidebar nav a:hover{color:var(--gold-soft); padding-left:5px;}
-
-  .sidebar .contact{
-    margin-top:auto;
-    padding-top:26px;
-    font-size:12.5px;
-    color:#B9C4D3;
-    display:flex; flex-direction:column; gap:9px;
-  }
+  .sidebar .contact{margin-top:auto; padding-top:26px; font-size:12.5px; color:#B9C4D3; display:flex; flex-direction:column; gap:9px;}
   .sidebar .contact a:hover{color:var(--gold-soft);}
-  .sidebar .contact .label{
-    display:block; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#7F8CA1; margin-bottom:2px;
-  }
+  .sidebar .contact .label{display:block; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#7F8CA1; margin-bottom:2px;}
 
   /* MAIN */
   main{padding:60px 72px 40px;}
-  section{
-    padding-bottom:56px;
-    margin-bottom:56px;
-    border-bottom:1px solid #DED2B7;
-  }
+  section{padding-bottom:56px; margin-bottom:56px; border-bottom:1px solid #DED2B7;}
   section:last-of-type{border-bottom:none; margin-bottom:0;}
-
-  .kicker{
-    font-size:11.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--gold);
-    font-weight:600;
-    margin-bottom:10px;
-  }
-  h2.section-title{
-    font-family:var(--serif);
-    font-size:29px;
-    font-weight:600;
-    color:var(--navy);
-    margin-bottom:30px;
-  }
+  .kicker{font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:10px;}
+  h2.section-title{font-family:var(--serif); font-size:29px; font-weight:600; color:var(--navy); margin-bottom:30px;}
 
   /* HERO */
-  .hero{padding-top:8px; border-bottom:1px solid #DED2B7;}
-  .hero .objective{
-    font-family:var(--serif);
-    font-size:22px;
-    line-height:1.55;
-    color:var(--navy);
-    max-width:44ch;
-    font-weight:500;
-  }
+  .hero{padding-top:8px;}
+  .hero .objective{font-family:var(--serif); font-size:22px; line-height:1.55; color:var(--navy); max-width:46ch; font-weight:500;}
   .hero .objective b{color:var(--gold); font-weight:600;}
   .hero .badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;}
-  .badge{
-    font-size:12px;
-    letter-spacing:0.03em;
-    padding:7px 14px;
-    background:var(--beige-card);
-    border:1px solid #D9CBA9;
-    color:var(--ink);
-  }
-  .hero .cta{margin-top:30px; display:flex; gap:14px;}
-  .btn{
-    font-size:13px;
-    font-weight:500;
-    padding:12px 22px;
-    letter-spacing:0.02em;
-    border:1px solid var(--navy);
-    color:var(--navy);
-    transition:background .15s, color .15s;
-  }
+  .badge{font-size:12px; letter-spacing:0.03em; padding:7px 14px; background:var(--beige-card); border:1px solid #D9CBA9; color:var(--ink);}
+  .badge.hl{border-color:var(--gold); color:var(--navy); font-weight:600;}
+  .hero .cta{margin-top:30px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{font-size:13px; font-weight:500; padding:12px 22px; letter-spacing:0.02em; border:1px solid var(--navy); color:var(--navy); transition:background .15s, color .15s;}
   .btn.solid{background:var(--navy); color:var(--cream);}
   .btn.solid:hover{background:var(--navy-soft);}
   .btn:not(.solid):hover{background:var(--navy); color:var(--cream);}
 
+  /* SPECIALIZATION */
+  .spec-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .spec-card{background:var(--navy); color:var(--cream); padding:30px;}
+  .spec-card .tag{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:10px;}
+  .spec-card h3{font-family:var(--serif); font-size:21px; font-weight:600; margin-bottom:10px;}
+  .spec-card p{font-size:13.5px; color:#C7CFDA; line-height:1.7;}
+  .spec-card ul{list-style:none; margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;}
+  .spec-card li{font-size:12px; padding:5px 11px; border:1px solid var(--gold); color:var(--gold-soft);}
+
   /* EDUCATION */
-  .edu-row{
-    display:grid; grid-template-columns:110px 1fr;
-    gap:24px;
-    padding:20px 0;
-    border-top:1px solid #E4D9BE;
-  }
+  .edu-row{display:grid; grid-template-columns:110px 1fr; gap:24px; padding:20px 0; border-top:1px solid #E4D9BE;}
   .edu-row:last-child{border-bottom:1px solid #E4D9BE;}
   .edu-year{font-family:var(--serif); font-size:16px; color:var(--gold); font-weight:600;}
   .edu-row h3{font-size:16.5px; color:var(--navy); font-weight:600;}
   .edu-row p{font-size:13.5px; color:var(--ink-dim); margin-top:3px;}
 
   /* SKILLS */
-  .skill-groups{display:grid; grid-template-columns:repeat(3, 1fr); gap:26px 30px;}
-  .skill-group h3{
-    font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--navy); font-weight:600; margin-bottom:12px;
-    padding-bottom:8px; border-bottom:2px solid var(--gold-soft);
-  }
+  .skill-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:26px 30px;}
+  .skill-group h3{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); font-weight:600; margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid var(--gold-soft);}
   .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
-  .chip{
-    font-size:12.5px;
-    padding:6px 12px;
-    background:var(--beige-card);
-    border:1px solid #D9CBA9;
-    color:var(--ink);
-  }
-  .chip.certified{border-color:var(--gold); color:var(--navy); font-weight:500;}
-  .chip.certified::after{content:" ✓"; color:var(--gold);}
+  .chip{font-size:12.5px; padding:6px 12px; background:var(--beige-card); border:1px solid #D9CBA9; color:var(--ink);}
+  .chip.key{border-color:var(--gold); color:var(--navy); font-weight:600;}
 
   /* EXPERIENCE */
-  .exp-card{
-    padding:24px 0;
-    border-top:1px solid #E4D9BE;
-    display:grid; grid-template-columns:1fr 3fr; gap:24px;
-  }
+  .exp-card{padding:24px 0; border-top:1px solid #E4D9BE; display:grid; grid-template-columns:1fr 3fr; gap:24px;}
   .exp-card:last-child{border-bottom:1px solid #E4D9BE;}
   .exp-card .org-block h3{font-family:var(--serif); font-size:17px; color:var(--navy); font-weight:600;}
   .exp-card .org-block .org{font-size:12.5px; color:var(--gold); margin-top:4px; letter-spacing:0.03em;}
   .exp-card p{font-size:14px; color:var(--ink-dim);}
 
   /* PROJECTS */
-  .project-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
-  .project-card{
-    background:var(--beige-card);
-    border:1px solid #D9CBA9;
-    padding:26px;
-    display:flex; flex-direction:column;
-  }
+  .project-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .project-card{background:var(--beige-card); border:1px solid #D9CBA9; padding:26px; display:flex; flex-direction:column;}
   .project-card .num{font-family:var(--serif); font-size:13px; color:var(--gold); font-weight:600; margin-bottom:12px;}
   .project-card h3{font-family:var(--serif); font-size:17px; color:var(--navy); font-weight:600; margin-bottom:10px; line-height:1.35;}
   .project-card p{font-size:13.5px; color:var(--ink-dim); flex:1;}
-  .project-card .metric{
-    margin-top:16px; padding-top:14px; border-top:1px solid #D9CBA9;
-    font-size:12px; color:var(--navy); font-weight:600; letter-spacing:0.02em;
-  }
+  .project-card .metric{margin-top:16px; padding-top:14px; border-top:1px solid #D9CBA9; font-size:12px; color:var(--navy); font-weight:600; letter-spacing:0.02em;}
 
   /* CERTIFICATIONS */
   .cert-list{display:flex; flex-direction:column;}
-  .cert-row{
-    display:grid; grid-template-columns:28px 1fr auto;
-    align-items:center;
-    gap:16px;
-    padding:16px 0;
-    border-top:1px solid #E4D9BE;
-    font-size:14px;
-  }
+  .cert-row{display:grid; grid-template-columns:28px 1fr auto; align-items:center; gap:16px; padding:16px 0; border-top:1px solid #E4D9BE; font-size:14px;}
   .cert-list .cert-row:last-child{border-bottom:1px solid #E4D9BE;}
   .cert-row .check{color:var(--gold); font-family:var(--serif); font-size:16px;}
   .cert-row h4{color:var(--navy); font-weight:600; font-size:14.5px;}
   .cert-row .issuer{color:var(--ink-dim); font-size:12.5px; text-align:right;}
 
   /* CONTACT */
-  .contact-grid{
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
-  }
-  .contact-card{
-    background:var(--beige-card);
-    border:1px solid #D9CBA9;
-    padding:20px;
-  }
+  .contact-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .contact-card{background:var(--beige-card); border:1px solid #D9CBA9; padding:20px;}
   .contact-card .label{font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:8px;}
   .contact-card .val{font-size:14.5px; color:var(--navy); font-weight:500; word-break:break-word;}
   .contact-card a.val:hover{color:var(--gold);}
+  footer{text-align:center; font-size:12px; color:var(--ink-dim); padding:30px 0 6px;}
 
-  footer{
-    text-align:center;
-    font-size:12px;
-    color:var(--ink-dim);
-    padding:30px 0 6px;
-  }
-
-  @media (max-width: 980px){
+  @media (max-width:980px){
     .layout{grid-template-columns:1fr;}
     .sidebar{position:relative; height:auto;}
     main{padding:44px 26px;}
     .skill-groups{grid-template-columns:1fr 1fr;}
-    .project-grid{grid-template-columns:1fr;}
+    .project-grid,.spec-grid{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr 1fr;}
     .exp-card{grid-template-columns:1fr;}
   }
-  @media (max-width: 600px){
-    .skill-groups{grid-template-columns:1fr;}
-    .contact-grid{grid-template-columns:1fr;}
+  @media (max-width:600px){
+    .skill-groups,.contact-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
 <body>
-
 <div class="layout">
 
   <aside class="sidebar">
     <div class="initials">DJ</div>
     <h1>Deri Jeswin S</h1>
-    <div class="role">Software Engineer · Fresher</div>
+    <div class="role">Network &amp; Cloud Engineer</div>
     <div class="rule"></div>
-    <p class="summary">Computer Science Engineering graduate (2026) with a foundation in cloud computing and full-stack development, built through internships, applied ML projects, and industry certifications.</p>
+    <p class="summary">B.E. Computer Science &amp; Engineering graduate with a strong specialization in Networking (CCNA) and Cloud Computing, backed by hands-on AWS internship experience and applied projects.</p>
 
     <nav>
+      <a href="#specialization">Specialization</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
@@ -308,13 +157,14 @@
     <!-- HERO -->
     <section class="hero" id="top">
       <p class="kicker">Portfolio</p>
-      <p class="objective">Detail-oriented CSE graduate with a strong foundation in <b>cloud computing</b> and <b>full-stack development</b> — ready to bring hands-on AWS experience and applied ML work to a software engineering role.</p>
+      <p class="objective">B.E. CSE graduate specializing in <b>Networking (CCNA)</b> and <b>Cloud Computing</b> — ready to design, secure and run reliable network and cloud infrastructure.</p>
       <div class="badges">
-        <span class="badge">Java (Certified)</span>
-        <span class="badge">Python (Certified)</span>
+        <span class="badge hl">CCNA Networking</span>
+        <span class="badge hl">Cloud Computing</span>
         <span class="badge">AWS</span>
-        <span class="badge">Cloud Computing</span>
         <span class="badge">Network Security</span>
+        <span class="badge">Linux</span>
+        <span class="badge">Java &amp; Python</span>
       </div>
       <div class="cta">
         <a href="mailto:derisunil@gmail.com" class="btn solid">Get in touch</a>
@@ -322,15 +172,39 @@
       </div>
     </section>
 
+    <!-- SPECIALIZATION -->
+    <section id="specialization">
+      <p class="kicker">01 · Specialization</p>
+      <h2 class="section-title">Core Focus Areas</h2>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <div class="tag">Networking</div>
+          <h3>CCNA Networking</h3>
+          <p>Strong grounding in how networks are built and secured — from addressing and switching to routing and troubleshooting.</p>
+          <ul>
+            <li>TCP/IP</li><li>Subnetting</li><li>Routing &amp; Switching</li><li>VLANs</li><li>Network Security</li>
+          </ul>
+        </div>
+        <div class="spec-card">
+          <div class="tag">Cloud</div>
+          <h3>Cloud Computing</h3>
+          <p>Hands-on with Amazon Web Services through internship work on cloud infrastructure and deployment strategies.</p>
+          <ul>
+            <li>AWS</li><li>Cloud Infrastructure</li><li>Deployment</li><li>Linux</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- EDUCATION -->
     <section id="education">
-      <p class="kicker">01 · Education</p>
+      <p class="kicker">02 · Education</p>
       <h2 class="section-title">Academic Background</h2>
       <div class="edu-row">
         <div class="edu-year">2026</div>
         <div>
-          <h3>B.E. Computer Science &amp; Engineering</h3>
-          <p>Panimalar Engineering College</p>
+          <h3>B.E. Computer Science &amp; Engineering — Graduated</h3>
+          <p>Panimalar Engineering College · Specialization: Networking (CCNA) &amp; Cloud Computing</p>
         </div>
       </div>
       <div class="edu-row">
@@ -351,23 +225,41 @@
 
     <!-- SKILLS -->
     <section id="skills">
-      <p class="kicker">02 · Skills</p>
+      <p class="kicker">03 · Skills</p>
       <h2 class="section-title">Technical Skills</h2>
       <div class="skill-groups">
         <div class="skill-group">
-          <h3>Languages</h3>
+          <h3>Networking</h3>
           <div class="chip-row">
-            <span class="chip certified">Java</span>
-            <span class="chip certified">Python</span>
-            <span class="chip">JavaScript</span>
+            <span class="chip key">CCNA</span>
+            <span class="chip">TCP/IP</span>
+            <span class="chip">Routing &amp; Switching</span>
+            <span class="chip">Subnetting</span>
+            <span class="chip">VLANs</span>
           </div>
         </div>
         <div class="skill-group">
           <h3>Cloud &amp; Infrastructure</h3>
           <div class="chip-row">
-            <span class="chip">AWS</span>
-            <span class="chip">Cloud Computing</span>
+            <span class="chip key">AWS</span>
+            <span class="chip key">Cloud Computing</span>
             <span class="chip">Deployment Strategy</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Security</h3>
+          <div class="chip-row">
+            <span class="chip">Network Security</span>
+            <span class="chip">Cryptography</span>
+            <span class="chip">Cybersecurity Fundamentals</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="chip-row">
+            <span class="chip">Java</span>
+            <span class="chip">Python</span>
+            <span class="chip">JavaScript</span>
           </div>
         </div>
         <div class="skill-group">
@@ -379,25 +271,11 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3>Tools &amp; Data</h3>
-          <div class="chip-row">
-            <span class="chip certified">Excel</span>
-            <span class="chip">UiPath / RPA</span>
-            <span class="chip">Local Storage</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Specialized Interests</h3>
-          <div class="chip-row">
-            <span class="chip">Cryptography</span>
-            <span class="chip">Network Security</span>
-            <span class="chip">Cloud Technologies</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Operating System</h3>
+          <h3>Tools &amp; Systems</h3>
           <div class="chip-row">
             <span class="chip">Linux</span>
+            <span class="chip">Excel</span>
+            <span class="chip">UiPath / RPA</span>
           </div>
         </div>
       </div>
@@ -405,7 +283,7 @@
 
     <!-- EXPERIENCE -->
     <section id="experience">
-      <p class="kicker">03 · Experience</p>
+      <p class="kicker">04 · Experience</p>
       <h2 class="section-title">Internships</h2>
       <div class="exp-card">
         <div class="org-block">
@@ -425,7 +303,7 @@
 
     <!-- PROJECTS -->
     <section id="projects">
-      <p class="kicker">04 · Key Projects</p>
+      <p class="kicker">05 · Key Projects</p>
       <h2 class="section-title">Selected Work</h2>
       <div class="project-grid">
         <div class="project-card">
@@ -451,65 +329,31 @@
 
     <!-- CERTIFICATIONS -->
     <section id="certifications">
-      <p class="kicker">05 · Certifications</p>
+      <p class="kicker">06 · Certifications</p>
       <h2 class="section-title">Credentials</h2>
       <div class="cert-list">
-        <div class="cert-row">
-          <span class="check">✓</span>
-          <h4>AWS Cloud Foundations</h4>
-          <span class="issuer">Xtragrad</span>
-        </div>
-        <div class="cert-row">
-          <span class="check">✓</span>
-          <h4>Java &amp; Python Programming</h4>
-          <span class="issuer">GUVI</span>
-        </div>
-        <div class="cert-row">
-          <span class="check">✓</span>
-          <h4>Advanced Excel</h4>
-          <span class="issuer">Udemy</span>
-        </div>
-        <div class="cert-row">
-          <span class="check">✓</span>
-          <h4>Cybersecurity Fundamentals</h4>
-          <span class="issuer">NASSCOM</span>
-        </div>
-        <div class="cert-row">
-          <span class="check">✓</span>
-          <h4>Cloud Practitioner</h4>
-          <span class="issuer">Udemy</span>
-        </div>
+        <div class="cert-row"><span class="check">✓</span><h4>AWS Cloud Foundations</h4><span class="issuer">Xtragrad</span></div>
+        <div class="cert-row"><span class="check">✓</span><h4>Cloud Practitioner</h4><span class="issuer">Udemy</span></div>
+        <div class="cert-row"><span class="check">✓</span><h4>Cybersecurity Fundamentals</h4><span class="issuer">NASSCOM</span></div>
+        <div class="cert-row"><span class="check">✓</span><h4>Java &amp; Python Programming</h4><span class="issuer">GUVI</span></div>
+        <div class="cert-row"><span class="check">✓</span><h4>Advanced Excel</h4><span class="issuer">Udemy</span></div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" style="margin-bottom:0;">
-      <p class="kicker">06 · Contact</p>
+      <p class="kicker">07 · Contact</p>
       <h2 class="section-title">Let's Connect</h2>
       <div class="contact-grid">
-        <div class="contact-card">
-          <div class="label">Email</div>
-          <a class="val" href="mailto:derisunil@gmail.com">derisunil@gmail.com</a>
-        </div>
-        <div class="contact-card">
-          <div class="label">Phone</div>
-          <span class="val">+91 95660014421</span>
-        </div>
-        <div class="contact-card">
-          <div class="label">LinkedIn</div>
-          <a class="val" href="https://www.linkedin.com/in/deri-j-351930265" target="_blank" rel="noopener">/in/derijeswins</a>
-        </div>
-        <div class="contact-card">
-          <div class="label">Location</div>
-          <span class="val">Chennai, India</span>
-        </div>
+        <div class="contact-card"><div class="label">Email</div><a class="val" href="mailto:derisunil@gmail.com">derisunil@gmail.com</a></div>
+        <div class="contact-card"><div class="label">Phone</div><span class="val">+91 95660014421</span></div>
+        <div class="contact-card"><div class="label">LinkedIn</div><a class="val" href="https://www.linkedin.com/in/deri-j-351930265" target="_blank" rel="noopener">/in/derijeswins</a></div>
+        <div class="contact-card"><div class="label">Location</div><span class="val">Chennai, India</span></div>
       </div>
-      <footer>© 2026 Deri Jeswin S — Built for the next opportunity.</footer>
+      <footer>© 2026 Deri Jeswin S — Networking &amp; Cloud Computing.</footer>
     </section>
 
   </main>
-
 </div>
-
 </body>
 </html>
